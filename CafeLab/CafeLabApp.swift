@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct CafeLabApp: App {
+    @StateObject private var cartManager = CartManager()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                MenuView()
+            }
+            .environmentObject(cartManager)
         }
     }
 }
