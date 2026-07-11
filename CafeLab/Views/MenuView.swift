@@ -25,7 +25,9 @@ struct MenuView: View {
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .safeAreaInset(edge: .bottom) {
-                cartBar
+                if shouldShowCartBar {
+                    cartBar
+                }
             }
             .navigationDestination(isPresented: $showCart) {
                 CartView()
@@ -33,6 +35,11 @@ struct MenuView: View {
             .task {
                 await viewModel.loadIfNeeded()
             }
+    }
+
+    private var shouldShowCartBar: Bool {
+        if case .loaded = viewModel.state { return true }
+        return false
     }
 
     @ViewBuilder
@@ -132,7 +139,7 @@ struct MenuView: View {
 
                 Spacer(minLength: 12)
 
-                Text(cartManager.totalPrice, format: .currency(code: "USD"))
+                Text(cartManager.totalPrice, format: .currency(code: "MYR"))
                     .font(.headline)
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
@@ -157,7 +164,7 @@ struct MenuView: View {
     }
 }
 
-#Preview {
-    NavigationStack { MenuView() }
-        .environmentObject(CartManager())
-}
+//#Preview {
+//    NavigationStack { MenuView() }
+//        .environmentObject(CartManager())
+//}

@@ -77,7 +77,7 @@ struct CartView: View {
                 Text("Total")
                     .font(.headline)
                 Spacer()
-                Text(cartManager.totalPrice, format: .currency(code: "USD"))
+                Text(cartManager.totalPrice, format: .currency(code: "MYR"))
                     .font(.headline)
             }
 

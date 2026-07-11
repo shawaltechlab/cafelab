@@ -29,7 +29,7 @@ struct MenuItemCard: View {
                 .frame(height: 32, alignment: .top)
 
             HStack(alignment: .center) {
-                Text(item.price, format: .currency(code: "USD"))
+                Text(item.price, format: .currency(code: "MYR"))
                     .font(.footnote.weight(.medium))
                 Spacer()
                 if item.isAvailable {

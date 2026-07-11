@@ -16,7 +16,7 @@ struct CartRowView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(line.item.name)
                     .font(.body.weight(.semibold))
-                Text(line.item.price, format: .currency(code: "USD"))
+                Text(line.item.price, format: .currency(code: "MYR"))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -41,7 +41,7 @@ struct CartRowView: View {
             .font(.title3)
             .buttonStyle(.plain)
 
-            Text(line.subtotal, format: .currency(code: "USD"))
+            Text(line.subtotal, format: .currency(code: "MYR"))
                 .font(.subheadline.weight(.medium))
                 .frame(width: 64, alignment: .trailing)
         }
