@@ -4,10 +4,13 @@ A browsing-and-cart slice of an F&B ordering app, built for the iOS take-home as
 
 ## Setup
 
-1. Open Xcode (15+) → **File ▸ New ▸ Project… ▸ App**, name it `CafeLab`, interface **SwiftUI**, minimum deployment target **iOS 16**.
-2. Delete the default `ContentView.swift`.
-3. Drag the `CafeLab` source folder from this repo into the project (check "Copy items if needed" and add to the app target), preserving the `Models` / `Networking` / `ViewModels` / `Views` groups.
-4. Build & run on any iOS 16+ simulator. No API key, no `Info.plist` changes, no third-party dependencies required.
+1. Clone this repository:
+   ```
+   git clone https://github.com/yourusername/CafeLab.git
+   cd CafeLab
+   ```
+2. Open CafeLab.xcodeproj in Xcode (15+).
+3. Build & run on any iOS 16+ simulator. No API key, no `Info.plist` changes, no third-party dependencies required.
 
 ## Data source
 
